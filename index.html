@@ -32,7 +32,23 @@
 </head>
 <body data-page="home">
 
+<!-- BOOT SEQUENCE — plays once per session -->
+<div id="bl-boot" aria-hidden="true">
+  <div class="boot-logo">BL.CO</div>
+  <div class="boot-line" data-boot-line="0">
+    <span class="boot-label">LOADING PROJECTS</span>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
   </div>
+  <div class="boot-line" data-boot-line="1">
+    <span class="boot-label">CONNECTING LABS</span>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+  <div class="boot-line" data-boot-line="2">
+    <span class="boot-label">STATUS: LIVE</span>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+  <div class="boot-status">SYSTEM ONLINE</div>
+  <button class="boot-skip" id="bootSkip">Skip</button>
 </div>
 
 <a href="#main" class="skip-link">Skip to content</a>
@@ -42,9 +58,10 @@
     <a href="index.html" class="logo">BL<span class="dot">.</span>co</a>
     <div class="nav-links">
       <a class="nav-link" data-page="home" href="index.html">Home</a>
-      <a class="nav-link" data-page="brands" href="brands.html">Brands</a>
+      <a class="nav-link" data-page="brands" href="brands.html">Companies</a>
       <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
       <a class="nav-link" data-page="journal" href="journal.html">Journal</a>
+      <a class="nav-link" data-page="now" href="now.html">Now</a>
       <a class="nav-link" data-page="about" href="about.html">About</a>
       <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
     </div>
@@ -86,6 +103,10 @@
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="contact.html" class="btn btn-ghost magnetic">Contact BL.co</a>
+        <button class="btn btn-ghost magnetic" data-terminal-open style="font-family:var(--font-ui);letter-spacing:.06em;">
+          <svg viewBox="0 0 24 24" fill="none" width="14" height="14" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Terminal
+        </button>
       </div>
     </div>
 
@@ -217,36 +238,60 @@
 </section>
 
 
-<!-- LIVE TELEMETRY DASHBOARD -->
-<section class="section divider-top divider-bottom" style="background:#000; overflow:hidden;">
+<!-- BL.CO PULSE — real data only -->
+<section class="section pulse-section">
   <div class="container">
-    <div class="section-head reveal" style="margin-bottom:40px;">
-      <div class="kicker-block">
-        <div class="eyebrow"><span class="status live" style="background:transparent; border:none; padding:0;"><span class="dot"></span>Live</span> Global Infrastructure</div>
-        <h2 class="h-2">Ecosystem Telemetry</h2>
+    <div class="pulse-header reveal">
+      <div>
+        <div class="pulse-eyebrow">PULSE — Live Signal</div>
+        <p class="body-md" style="margin-top:8px; color:var(--gray-500);">Real numbers. From GitHub and Vercel. Updated every 5 minutes.</p>
+      </div>
+      <div class="pulse-updated" id="pulseUpdated">—</div>
+    </div>
+
+    <div class="pulse-grid reveal">
+      <div class="pulse-cell">
+        <div class="pulse-cell-label">Active Projects</div>
+        <div class="pulse-cell-value loading" id="pulse-projects">—</div>
+        <div class="pulse-cell-sub">Currently building</div>
+      </div>
+      <div class="pulse-cell">
+        <div class="pulse-cell-label">GitHub Commits</div>
+        <div class="pulse-cell-value loading" id="pulse-commits">—</div>
+        <div class="pulse-cell-sub">Last 30 days</div>
+      </div>
+      <div class="pulse-cell">
+        <div class="pulse-cell-label">Deployments</div>
+        <div class="pulse-cell-value loading" id="pulse-deploys">—</div>
+        <div class="pulse-cell-sub">Total production ships</div>
+      </div>
+      <div class="pulse-cell">
+        <div class="pulse-cell-label">Latest Ship</div>
+        <div class="pulse-cell-value loading" style="font-size:1.4rem;" id="pulse-latest">—</div>
+        <div class="pulse-cell-sub">Via Vercel</div>
       </div>
     </div>
-    
-    <div class="telemetry-grid reveal" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1px; background:var(--border-subtle); border:1px solid var(--border-subtle);">
-      <div class="telemetry-node glow-card" style="background:var(--surface-1); padding:32px; display:flex; flex-direction:column; justify-content:space-between; min-height:160px; border:none;">
-        <span class="body-md" style="color:var(--gray-400);">Edge Latency (Global)</span>
-        <div style="font-family:var(--font-ui); font-size:32px; font-weight:500; letter-spacing:-0.03em;"><span id="tel-latency">14</span><span style="font-size:16px; color:var(--gray-500); margin-left:4px;">ms</span></div>
-      </div>
-      <div class="telemetry-node glow-card" style="background:var(--surface-1); padding:32px; display:flex; flex-direction:column; justify-content:space-between; min-height:160px; border:none;">
-        <span class="body-md" style="color:var(--gray-400);">Compute Uptime</span>
-        <div style="font-family:var(--font-ui); font-size:32px; font-weight:500; letter-spacing:-0.03em; color:var(--accent);"><span id="tel-uptime">99.999</span><span style="font-size:16px; margin-left:4px;">%</span></div>
-      </div>
-      <div class="telemetry-node glow-card" style="background:var(--surface-1); padding:32px; display:flex; flex-direction:column; justify-content:space-between; min-height:160px; border:none;">
-        <span class="body-md" style="color:var(--gray-400);">Active Connections</span>
-        <div style="font-family:var(--font-ui); font-size:32px; font-weight:500; letter-spacing:-0.03em;"><span id="tel-conn">1,248</span><span style="font-size:16px; color:var(--gray-500); margin-left:4px;">req/s</span></div>
-      </div>
-      <div class="telemetry-node glow-card" style="background:var(--surface-1); padding:32px; display:flex; flex-direction:column; justify-content:space-between; min-height:160px; border:none;">
-        <span class="body-md" style="color:var(--gray-400);">Venture Instances</span>
-        <div style="font-family:var(--font-ui); font-size:32px; font-weight:500; letter-spacing:-0.03em;">5<span style="font-size:16px; color:var(--gray-500); margin-left:4px;">/5</span></div>
+
+    <div class="pulse-chart reveal">
+      <div class="pulse-chart-label">GitHub Activity — Last 12 Weeks</div>
+      <div class="pulse-bars" id="pulse-chart-bars">
+        <!-- filled by JS -->
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
+        <div class="pulse-bar" style="height:10%"></div>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="section zone-alt divider-top divider-bottom" id="projects">
   <div class="container">
@@ -419,5 +464,76 @@
 <script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script defer src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
 <script defer src="assets/main.js"></script>
+<script defer src="assets/terminal.js"></script>
+<script>
+// ── BOOT SEQUENCE ──────────────────────────────────────────────────────────
+(function() {
+  var boot = document.getElementById('bl-boot');
+  var skip = document.getElementById('bootSkip');
+  if (!boot) return;
+  // Only play once per session
+  if (sessionStorage.getItem('bl_booted')) { boot.remove(); return; }
+  sessionStorage.setItem('bl_booted', '1');
+
+  function dismissBoot() {
+    boot.classList.add('hiding');
+    setTimeout(function() { boot.remove(); }, 520);
+  }
+  if (skip) skip.addEventListener('click', dismissBoot);
+  document.addEventListener('keydown', function kd(e) {
+    if (boot.parentNode) { dismissBoot(); document.removeEventListener('keydown', kd); }
+  }, { once: true });
+
+  // Animate bars sequentially
+  var lines = boot.querySelectorAll('[data-boot-line]');
+  var status = boot.querySelector('.boot-status');
+  var delay = 120;
+  lines.forEach(function(line, i) {
+    setTimeout(function() {
+      line.classList.add('visible');
+      var fill = line.querySelector('.boot-bar-fill');
+      if (fill) { fill.style.width = '0'; setTimeout(function(){ fill.style.width = '100%'; }, 40); }
+    }, delay + i * 380);
+  });
+  // Show status then dismiss
+  setTimeout(function() {
+    if (status) status.classList.add('visible');
+    setTimeout(dismissBoot, 640);
+  }, delay + lines.length * 380 + 200);
+})();
+
+// ── PULSE DATA ────────────────────────────────────────────────────────────
+(function() {
+  function set(id, val) { var el = document.getElementById(id); if(el){ el.textContent = val; el.classList.remove('loading'); } }
+  function formatDate(ts) {
+    if (!ts) return '--';
+    var d = new Date(typeof ts === 'number' ? ts : ts);
+    return d.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
+  }
+  fetch('/api/pulse').then(function(r){ return r.json(); }).then(function(d) {
+    set('pulse-projects', d.config.activeProjects);
+    set('pulse-commits', d.github.commits30d !== null ? d.github.commits30d : '--');
+    set('pulse-deploys', d.vercel.deployments !== null ? d.vercel.deployments : '--');
+    set('pulse-latest', formatDate(d.vercel.latestAt));
+    var upd = document.getElementById('pulseUpdated');
+    if (upd) upd.textContent = 'Updated ' + new Date(d.fetchedAt).toLocaleTimeString();
+    // Render activity bars
+    var bars = document.querySelectorAll('#pulse-chart-bars .pulse-bar');
+    var act = d.github.weeklyActivity || [];
+    var max = Math.max.apply(null, act.concat([1]));
+    bars.forEach(function(bar, i) {
+      var val = act[i] || 0;
+      var pct = Math.max(6, Math.round((val / max) * 100));
+      bar.style.height = pct + '%';
+      bar.title = val + ' commits';
+      if (val > 0) bar.setAttribute('data-active', 'true');
+    });
+  }).catch(function() {
+    ['pulse-projects','pulse-commits','pulse-deploys','pulse-latest'].forEach(function(id){
+      var el = document.getElementById(id); if(el){ el.textContent = '--'; el.classList.remove('loading'); }
+    });
+  });
+})();
+</script>
 </body>
 </html>

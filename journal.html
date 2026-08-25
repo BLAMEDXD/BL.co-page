@@ -22,9 +22,10 @@
     <a href="index.html" class="logo">BL<span class="dot">.</span>co</a>
     <div class="nav-links">
       <a class="nav-link" data-page="home" href="index.html">Home</a>
-      <a class="nav-link" data-page="brands" href="brands.html">Brands</a>
+      <a class="nav-link" data-page="brands" href="brands.html">Companies</a>
       <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
       <a class="nav-link" data-page="journal" href="journal.html">Journal</a>
+      <a class="nav-link" data-page="now" href="now.html">Now</a>
       <a class="nav-link" data-page="about" href="about.html">About</a>
       <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
     </div>
@@ -51,8 +52,8 @@
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a><span>/</span><span class="current">Journal</span></div>
     <div class="eyebrow reveal">Journal</div>
-    <h1 class="h-display blur-in text-balance">Notes from inside<br>the ecosystem.</h1>
-    <p class="body-lg reveal">Design, software, AI, and the slower work of building something meant to last — written as we go, not after the fact.</p>
+    <h1 class="h-display blur-in text-balance">Development logs<br>from inside the lab.</h1>
+    <p class="body-lg reveal">Build notes, design decisions, failed experiments, and founder thoughts — written as it happens, not after the fact.</p>
   </div>
 </section>
 
@@ -61,9 +62,10 @@
 
     <div class="featured-article reveal">
       <a href="journal-restraint-as-a-feature.html" class="pcard-media" style="border:1px solid var(--border-subtle);">
-        <div class="grid-overlay"></div><span class="mono" style="font-family:var(--font-editorial); font-style:italic; opacity:.18;">01</span>
+        <div class="grid-overlay"></div><span class="mono" style="font-family:var(--font-editorial); font-style:italic; opacity:.18;">LOG_001</span>
       </a>
       <div>
+        <div class="log-num">LOG_001</div>
         <div class="meta-row" style="display:flex; align-items:center; gap:10px; font-family:var(--font-ui); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--gray-500); margin-bottom:16px;">
           <span class="cat" style="color:var(--accent);">Design</span><span>·</span><span>6 Min Read</span><span>·</span><span>Featured</span>
         </div>
@@ -71,7 +73,7 @@
         <p class="body-md" style="margin-top:16px; max-width:52ch;">Every design brief we write bans something — a color, an effect, a font. This is the case for why the ban is the most useful part of the brief.</p>
         <div class="byline" style="display:flex; align-items:center; gap:10px; margin-top:24px;">
           <div class="avatar-dot">BL</div>
-          <span class="label-caps" style="color:var(--gray-400);">B.L. · July 2026</span>
+          <span class="label-caps" style="color:var(--gray-400);">BLAMED · July 2026</span>
         </div>
       </div>
     </div>
@@ -79,11 +81,11 @@
     <div class="journal-controls reveal">
       <div class="cat-tabs filter-bar" style="margin-bottom:0;">
         <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="build-log">Build Log</button>
         <button class="filter-chip" data-filter="design">Design</button>
         <button class="filter-chip" data-filter="software">Software</button>
         <button class="filter-chip" data-filter="ai">AI</button>
         <button class="filter-chip" data-filter="startups">Startups</button>
-        <button class="filter-chip" data-filter="product">Product</button>
       </div>
       <div class="search-box">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -92,52 +94,58 @@
     </div>
 
     <div class="article-grid reveal">
-      <article class="acard reveal-child" style="--i:0" data-cat="product">
-        <a href="#" class="acard-media"><span class="mono">02</span></a>
-        <div class="meta-row"><span class="cat">Product</span><span>·</span><span>5 Min Read</span></div>
+      <article class="acard reveal-child" style="--i:0" data-cat="build-log">
+        <a href="#" class="acard-media"><span class="mono">LOG_007</span></a>
+        <div class="log-num">LOG_007</div>
+        <div class="meta-row"><span class="cat">Build Log</span><span>·</span><span>4 Min Read</span></div>
+        <a href="#"><h3>The Rule About Fake Metrics</h3></a>
+        <p>Why BL.co's PULSE section only shows numbers that come from a real source — and what we cut because it didn't.</p>
+        <div class="byline"><div class="avatar-dot">BL</div><span>BLAMED · Aug 2026</span></div>
+      </article>
+
+      <article class="acard reveal-child" style="--i:1" data-cat="build-log">
+        <a href="#" class="acard-media"><span class="mono">LOG_006</span></a>
+        <div class="log-num">LOG_006</div>
+        <div class="meta-row"><span class="cat">Build Log</span><span>·</span><span>6 Min Read</span></div>
+        <a href="#"><h3>Infrastructure First: BL.co's Shared Toolchain</h3></a>
+        <p>Why we built the shared API layer and design system before shipping individual products — and what that unlocked.</p>
+        <div class="byline"><div class="avatar-dot">BL</div><span>BLAMED · Aug 2026</span></div>
+      </article>
+
+      <article class="acard reveal-child" style="--i:2" data-cat="ai">
+        <a href="#" class="acard-media"><span class="mono">LOG_005</span></a>
+        <div class="log-num">LOG_005</div>
+        <div class="meta-row"><span class="cat">AI</span><span>·</span><span>8 Min Read</span></div>
+        <a href="#"><h3>Why Ascend Is Being Rebuilt From Scratch</h3></a>
+        <p>The first version of Ascend was deleted. Not paused. Not archived. Deleted. Here is exactly why.</p>
+        <div class="byline"><div class="avatar-dot">BL</div><span>BLAMED · Aug 2026</span></div>
+      </article>
+
+      <article class="acard reveal-child" style="--i:3" data-cat="product">
+        <a href="#" class="acard-media"><span class="mono">LOG_002</span></a>
+        <div class="log-num">LOG_002</div>
+        <div class="meta-row"><span class="cat">Build Log</span><span>·</span><span>5 Min Read</span></div>
         <a href="#"><h3>What Tic-Tac-Toe Taught Us About Shipping Small</h3></a>
         <p>Nexus is a solved game. Here's why building it properly mattered more than building something bigger.</p>
-        <div class="byline"><div class="avatar-dot">BL</div><span>B.L. · July 2026</span></div>
-      </article>
-
-      <article class="acard reveal-child" style="--i:1" data-cat="software">
-        <a href="#" class="acard-media"><span class="mono">03</span></a>
-        <div class="meta-row"><span class="cat">Software</span><span>·</span><span>7 Min Read</span></div>
-        <a href="#"><h3>Fifteen Layers Deep: Rethinking What "Network Speed" Means</h3></a>
-        <p>A single Mbps number hides more than it tells you. Notes from building 4¹⁵ Tests.</p>
-        <div class="byline"><div class="avatar-dot">BL</div><span>B.L. · June 2026</span></div>
-      </article>
-
-      <article class="acard reveal-child" style="--i:2" data-cat="startups">
-        <a href="#" class="acard-media"><span class="mono">04</span></a>
-        <div class="meta-row"><span class="cat">Startups</span><span>·</span><span>8 Min Read</span></div>
-        <a href="#"><h3>Building an Ecosystem Instead of a Product</h3></a>
-        <p>Why BL.co is structured as five divisions instead of one company trying to do everything at once.</p>
-        <div class="byline"><div class="avatar-dot">BL</div><span>B.L. · June 2026</span></div>
-      </article>
-
-      <article class="acard reveal-child" style="--i:3" data-cat="ai">
-        <a href="#" class="acard-media"><span class="mono">05</span></a>
-        <div class="meta-row"><span class="cat">AI</span><span>·</span><span>6 Min Read</span></div>
-        <a href="#"><h3>Where We Draw the Line With AI in Our Workflow</h3></a>
-        <p>Useful for drafts and scaffolding. Not trusted with final judgment. Here's the reasoning.</p>
-        <div class="byline"><div class="avatar-dot">BL</div><span>B.L. · May 2026</span></div>
+        <div class="byline"><div class="avatar-dot">BL</div><span>BLAMED · July 2026</span></div>
       </article>
 
       <article class="acard reveal-child" style="--i:4" data-cat="software">
-        <a href="#" class="acard-media"><span class="mono">06</span></a>
-        <div class="meta-row"><span class="cat">Software</span><span>·</span><span>4 Min Read</span></div>
-        <a href="#"><h3>The Quiet Cost of Too Many Tools</h3></a>
-        <p>Every new integration is a future migration. A short argument for a smaller stack.</p>
-        <div class="byline"><div class="avatar-dot">BL</div><span>B.L. · May 2026</span></div>
+        <a href="#" class="acard-media"><span class="mono">LOG_003</span></a>
+        <div class="log-num">LOG_003</div>
+        <div class="meta-row"><span class="cat">Software</span><span>·</span><span>7 Min Read</span></div>
+        <a href="#"><h3>Fifteen Layers Deep: Rethinking What "Network Speed" Means</h3></a>
+        <p>A single Mbps number hides more than it tells you. Notes from building 4¹⁵ Tests.</p>
+        <div class="byline"><div class="avatar-dot">BL</div><span>BLAMED · June 2026</span></div>
       </article>
 
-      <article class="acard reveal-child" style="--i:5" data-cat="design">
-        <a href="#" class="acard-media"><span class="mono">07</span></a>
-        <div class="meta-row"><span class="cat">Design</span><span>·</span><span>5 Min Read</span></div>
-        <a href="#"><h3>Five Colors, One Accent: Designing Inside a Small Palette</h3></a>
-        <p>How limiting BL.co's entire visual identity to five colors made every decision faster, not slower.</p>
-        <div class="byline"><div class="avatar-dot">BL</div><span>B.L. · April 2026</span></div>
+      <article class="acard reveal-child" style="--i:5" data-cat="startups">
+        <a href="#" class="acard-media"><span class="mono">LOG_004</span></a>
+        <div class="log-num">LOG_004</div>
+        <div class="meta-row"><span class="cat">Startups</span><span>·</span><span>8 Min Read</span></div>
+        <a href="#"><h3>Building an Ecosystem Instead of a Product</h3></a>
+        <p>Why BL.co is structured as four companies instead of one company trying to do everything at once.</p>
+        <div class="byline"><div class="avatar-dot">BL</div><span>BLAMED · June 2026</span></div>
       </article>
     </div>
   </div>
@@ -147,7 +155,7 @@
   <div class="cta-watermark" aria-hidden="true">BL.co</div>
   <div class="container cta-inner reveal">
     <div class="eyebrow" style="justify-content:center;">Stay In The Loop</div>
-    <h2 class="h-1 text-balance">New notes, sent occasionally.</h2>
+    <h2 class="h-1 text-balance">New logs, sent occasionally.</h2>
     <form class="newsletter reveal" data-demo-form style="max-width:420px; margin:36px auto 0;">
       <input type="email" placeholder="Your email" aria-label="Email for newsletter" required>
       <button type="submit">Subscribe</button>
@@ -162,16 +170,16 @@
   <div class="container footer-top">
     <div class="footer-brand">
       <a href="index.html" class="logo">BL<span class="dot">.</span>co</a>
-      <p class="body-md">The parent structure for software, web products, games, and digital experiments.</p>
+      <p class="body-md">The parent structure for software, media, and digital experiments.</p>
       <form class="newsletter" data-demo-form>
         <input type="email" placeholder="Your email" aria-label="Email for newsletter" required>
         <button type="submit">Join</button>
       </form>
       <p class="body-md" data-form-note style="margin-top:10px; font-size:0.82rem;"></p>
     </div>
-    <div class="footer-col"><span class="h-3">Divisions</span><a href="brands.html#software">Software</a><a href="brands.html#web">Web</a><a href="brands.html#labs">Labs</a><a href="brands.html#games">Webtastic Games</a><a href="brands.html#media">Media</a></div>
+    <div class="footer-col"><span class="h-3">Companies</span><a href="brands.html#software">BL.Software</a><a href="brands.html#media">BL.Media</a><a href="brands.html#labs">BL.Labs</a><a href="brands.html#antar">Antar Studio</a></div>
     <div class="footer-col"><span class="h-3">Portfolio</span><a href="projects.html">All Projects</a><a href="project-nexus.html">Case Study: Nexus</a><a href="journal.html">Journal</a></div>
-    <div class="footer-col"><span class="h-3">Company</span><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><span class="h-3">Company</span><a href="about.html">About</a><a href="now.html">Now</a><a href="contact.html">Contact</a></div>
     <div class="footer-col"><span class="h-3">Connect</span><a href="mailto:hello@bl.co">hello@bl.co</a><a href="#">Instagram</a><a href="#">X / Twitter</a></div>
   </div>
   <div class="container footer-bottom">
@@ -184,8 +192,8 @@
 <script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script defer src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
 <script defer src="assets/main.js"></script>
+<script defer src="assets/terminal.js"></script>
 <script>
-/* lightweight client-side search across article cards (title + excerpt) */
 (function(){
   var input = document.querySelector('.search-box input');
   if(!input) return;
