@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    BL.co — nav.js (Global Navigation Component)
    Single source of truth. All nav HTML, behavior, and variants
    owned here. No page layout, no content spacing, no hero
@@ -15,6 +15,14 @@
   /* ── Variant support ─────────────────────────────────────── */
   var variant = document.body.getAttribute('data-nav-variant') || 'default';
   var activePage = document.body.getAttribute('data-page') || '';
+
+  /* ── OG image (auto-inject if missing) ───────────────────── */
+  if (!document.querySelector('meta[property="og:image"]')) {
+    var ogMeta = document.createElement('meta');
+    ogMeta.setAttribute('property', 'og:image');
+    ogMeta.setAttribute('content', '/assets/bl-co-logo.jpg');
+    document.head.appendChild(ogMeta);
+  }
 
   /* ── Nav HTML (the one source of truth) ──────────────────── */
   var NAV_HTML =
