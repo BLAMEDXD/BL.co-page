@@ -22,37 +22,10 @@
     el.textContent = new Date().getFullYear();
   });
 
-  /* ── Nav scroll state ───────────────────────────────────── */
-  var nav = document.getElementById('siteNav');
-  if (nav) {
-    function onNavScroll() { nav.classList.toggle('scrolled', window.scrollY > 16); }
-    window.addEventListener('scroll', onNavScroll, { passive: true });
-    onNavScroll();
-  }
 
-  /* ── Active nav link ────────────────────────────────────── */
-  var here = document.body.getAttribute('data-page') || '';
-  document.querySelectorAll('.nav-link[data-page], .mobile-menu a[data-page]').forEach(function (a) {
-    if (a.getAttribute('data-page') === here) a.classList.add('is-active');
-  });
+  /* ── Nav behavior now handled by assets/nav.js ─────────── */
 
-  /* ── Mobile menu ────────────────────────────────────────── */
-  var burger = document.getElementById('burgerBtn');
-  var mmenu  = document.getElementById('mobileMenu');
-  if (burger && mmenu) {
-    function closeMenu() {
-      burger.classList.remove('open'); mmenu.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
-    }
-    burger.addEventListener('click', function () {
-      var isOpen = mmenu.classList.toggle('open');
-      burger.classList.toggle('open', isOpen);
-      burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-    mmenu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
-    window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
-  }
+
 
   /* ── Scroll reveal (IntersectionObserver) ───────────────── */
   if ('IntersectionObserver' in window && !reduceMotion) {

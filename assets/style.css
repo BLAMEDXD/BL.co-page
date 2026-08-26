@@ -221,6 +221,18 @@ ul{ list-style:none; }
 .mobile-menu a{ font-family:var(--font-display); font-weight:600; font-size:30px; letter-spacing:-0.02em; padding:12px 0; border-bottom:1px solid var(--border-subtle); color:var(--white); }
 .mobile-menu .btn{ margin-top:26px; align-self:flex-start; }
 
+/* ── Nav Variants ─────────────────────────────────────────── */
+/* transparent: clear at top, solid on scroll (already handled by .scrolled) */
+.nav--transparent{ background:transparent; }
+.nav--transparent.scrolled{ background:rgba(0,0,0,0.78); backdrop-filter:blur(14px) saturate(140%); -webkit-backdrop-filter:blur(14px) saturate(140%); }
+/* overlay: always transparent, no scroll background */
+.nav--overlay{ background:transparent !important; backdrop-filter:none !important; border-bottom-color:transparent !important; }
+/* minimal: only logo + burger visible on desktop */
+.nav--minimal .nav-links{ display:none; }
+.nav--minimal .nav-cta{ display:none; }
+.nav--minimal .nav-burger{ display:flex; }
+
+
 /* ============================================================================
    REVEAL ON SCROLL
    ============================================================================ */
