@@ -264,7 +264,7 @@
     strip.innerHTML =
       '<span class="status-pill"><span class="pulse-dot"></span>All Divisions Operational</span>' +
       '<span class="status-pill">Build Passing</span>' +
-      '<span class="status-pill">5 Divisions Synced</span>';
+      '<span class="status-pill">4 Companies Synced</span>';
     top.insertAdjacentElement('afterend', strip);
   });
 
@@ -342,18 +342,6 @@
     });
   }
 
-  /* ── Live telemetry dashboard ───────────────────────────── */
-  var telLatency = document.getElementById('tel-latency');
-  var telUptime  = document.getElementById('tel-uptime');
-  var telConn    = document.getElementById('tel-conn');
-  if (telLatency && telUptime && telConn) {
-    setInterval(function () {
-      telLatency.textContent = Math.floor(Math.random() * 7) + 11;
-      if (Math.random() > 0.9) telUptime.textContent = (99.990 + Math.random() * 0.009).toFixed(3);
-      telConn.textContent = (Math.floor(Math.random() * 200) + 1150).toLocaleString();
-    }, 1500);
-  }
-
   /* ── Dual-mode early access signup ─────────────────────── */
   var toggleClassic  = document.getElementById('toggleClassic');
   var toggleTerminal = document.getElementById('toggleTerminal');
@@ -414,7 +402,7 @@
     '      <div class="cmd-group"><span class="cmd-group-label">Pages</span>',
     '        <a href="index.html"    class="cmd-item"><div class="cmd-item-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</div><span class="cmd-shortcut">H</span></a>',
     '        <a href="projects.html" class="cmd-item"><div class="cmd-item-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> Projects</div><span class="cmd-shortcut">P</span></a>',
-    '        <a href="brands.html"  class="cmd-item"><div class="cmd-item-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Brands</div><span class="cmd-shortcut">B</span></a>',
+    '        <a href="brands.html"  class="cmd-item"><div class="cmd-item-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Companies</div><span class="cmd-shortcut">B</span></a>',
     '        <a href="about.html"   class="cmd-item"><div class="cmd-item-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> About</div><span class="cmd-shortcut">A</span></a>',
     '        <a href="contact.html" class="cmd-item"><div class="cmd-item-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Contact</div><span class="cmd-shortcut">C</span></a>',
     '      </div>',
@@ -476,7 +464,7 @@
     '<div class="mac-dock-wrapper" id="macDock">',
     '  <div class="mac-dock">',
     '    <a href="index.html"    class="dock-item"><div class="dock-item-label">Home</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></a>',
-    '    <a href="brands.html"  class="dock-item"><div class="dock-item-label">Brands</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></a>',
+    '    <a href="brands.html"  class="dock-item"><div class="dock-item-label">Companies</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></a>',
     '    <a href="projects.html" class="dock-item"><div class="dock-item-label">Projects</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></a>',
     '    <a href="journal.html" class="dock-item"><div class="dock-item-label">Journal</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></a>',
     '    <a href="contact.html" class="dock-item"><div class="dock-item-label">Contact</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>',
@@ -552,3 +540,4 @@
   // Note: page transitions via CSS @view-transition { navigation: auto }
 
 })();
+
