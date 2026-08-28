@@ -722,9 +722,9 @@ ul{ list-style:none; }
 
 .article-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gutter); }
 .acard{ display:flex; flex-direction:column; gap:16px; }
-.acard-media{ aspect-ratio:16/10; background:linear-gradient(155deg, var(--surface-3), var(--surface-1)); border:1px solid var(--border-subtle); position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-.acard-media::before{ content:''; position:absolute; inset:0; background:url('bl-co-logo.jpg') center/60% no-repeat; opacity:.08; pointer-events:none; }
-.acard-media .mono{ font-family:var(--font-editorial); font-style:italic; font-size:2.6rem; color:var(--white); opacity:.14; position:relative; z-index:1; }
+.acard-media{ aspect-ratio:16/10; background:linear-gradient(155deg, var(--surface-3), var(--surface-1)); border:1px solid var(--border-subtle); position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; overflow:hidden; }
+.acard-media .card-logo{ width:48px; height:auto; opacity:.35; }
+.acard-media .mono{ font-family:var(--font-editorial); font-style:italic; font-size:1.4rem; color:var(--white); opacity:.25; }
 .acard .meta-row{ display:flex; align-items:center; gap:10px; font-family:var(--font-ui); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--gray-500); }
 .acard .meta-row .cat{ color:var(--accent); }
 .acard h3{ font-family:var(--font-display); font-weight:600; font-size:1.15rem; letter-spacing:-0.01em; line-height:1.3; }
