@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — BL.co</title>
-<meta name="description" content="Start a project, explore a partnership, or ask a question — reach BL.co and its divisions directly.">
+<title>Partner With Us - BL.co</title>
+<meta name="description" content="Submit a partnership or project inquiry to BL.co.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2374a9fa'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="contact">
-</div>
 
 <a href="#main" class="skip-link">Skip to content</a>
 
@@ -24,35 +23,60 @@
 
 <section class="page-hero divider-bottom">
   <div class="container">
-    <div class="breadcrumb reveal"><a href="index.html">Home</a><span>/</span><span class="current">Contact</span></div>
-    <div class="eyebrow reveal">Get In Touch</div>
-    <h1 class="h-display blur-in text-balance">Let's build something<br>meaningful.</h1>
+    <div class="breadcrumb reveal"><a href="index.html">Home</a><span>/</span><span class="current">Partner With Us</span></div>
+    <div class="eyebrow reveal">Partnerships</div>
+    <h1 class="h-display blur-in text-balance">Submit a proposal.</h1>
     <p class="body-lg reveal">We're selective about the projects we take on — but genuinely open to the right ones. Tell us what you're building.</p>
   </div>
 </section>
 
-<section class="section-tight" style="min-height: 50vh; display: flex; align-items: center;">
-  <div class="container" style="max-width: 600px; text-align: center;">
-    
-    <div class="contact-info-block" style="margin-bottom: 40px;">
-      <span class="label-caps" style="color:var(--gray-500);">Direct Email</span>
-      <a href="mailto:laptopsystem1.1@gmail.com" class="h-2" style="display:block; margin-top:12px; font-size:2rem; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--white)'">laptopsystem1.1@gmail.com</a>
-    </div>
+<section class="section-tight">
+  <div class="container" style="max-width: 760px; margin: 0 auto;">
+    <div class="reveal">
+      <form class="form-grid" data-demo-form>
+        <div class="field"><label for="c-name">Full Name</label><input id="c-name" name="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="c-company">Company</label><input id="c-company" name="company" type="text" placeholder="Company or venture"></div>
+        <div class="field"><label for="c-email">Email Address</label><input id="c-email" name="email" type="email" placeholder="you@company.com" required></div>
+        <div class="field"><label for="c-phone">Phone (Optional)</label><input id="c-phone" name="phone" type="tel" placeholder="+91 00000 00000"></div>
 
-    <div class="contact-info-block">
-      <span class="label-caps" style="color:var(--gray-500);">Social & Ecosystem</span>
-      <div class="btn-row" style="margin-top:20px; justify-content: center;">
-        <a href="https://github.com/BLAMEDXD" target="_blank" rel="noopener noreferrer" class="btn btn-ghost magnetic">
-          <svg viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true" style="margin-right: 8px;"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/></svg>
-          GitHub
-        </a>
-        <a href="https://x.com/BLAMEDXD" target="_blank" rel="noopener noreferrer" class="btn btn-ghost magnetic">
-          <svg viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true" style="margin-right: 8px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/></svg>
-          X / Twitter
-        </a>
-      </div>
+        <div class="field"><label for="c-type">Project Type</label>
+          <select id="c-type" name="projectType">
+            <option>Website</option><option>SaaS Product</option><option>AI Product</option><option>Mobile App</option>
+            <option>Branding</option><option>UI/UX Design</option><option>Game Development</option><option>Consultation</option>
+          </select>
+        </div>
+        <div class="field"><label for="c-budget">Budget Range</label>
+          <select id="c-budget" name="budget">
+            <option>Undisclosed</option><option>Under ₹1L</option><option>₹1L – ₹5L</option><option>₹5L – ₹15L</option><option>₹15L+</option>
+          </select>
+        </div>
+
+        <div class="field full"><label for="c-timeline">Timeline</label><input id="c-timeline" name="timeline" type="text" placeholder="e.g. Launch in Q4 2026"></div>
+
+        <div class="field full">
+          <label>Services Interested In</label>
+          <div class="services-grid">
+            <div class="svc-chip"><input type="checkbox" id="svc1" name="services" value="Website"><label for="svc1">Website</label></div>
+            <div class="svc-chip"><input type="checkbox" id="svc2" name="services" value="SaaS"><label for="svc2">SaaS</label></div>
+            <div class="svc-chip"><input type="checkbox" id="svc3" name="services" value="AI Product"><label for="svc3">AI Product</label></div>
+            <div class="svc-chip"><input type="checkbox" id="svc4" name="services" value="Mobile App"><label for="svc4">Mobile App</label></div>
+            <div class="svc-chip"><input type="checkbox" id="svc5" name="services" value="Branding"><label for="svc5">Branding</label></div>
+            <div class="svc-chip"><input type="checkbox" id="svc6" name="services" value="UI/UX"><label for="svc6">UI/UX</label></div>
+            <div class="svc-chip"><input type="checkbox" id="svc7" name="services" value="Game Development"><label for="svc7">Game Development</label></div>
+            <div class="svc-chip"><input type="checkbox" id="svc8" name="services" value="Consultation"><label for="svc8">Consultation</label></div>
+          </div>
+        </div>
+
+        <div class="field full"><label for="c-message">Message</label><textarea id="c-message" name="message" placeholder="What are you building?" required></textarea></div>
+
+        <div class="field full form-submit">
+          <button type="submit" class="btn btn-primary magnetic" style="width:fit-content;">Submit Inquiry
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="body-md form-note" data-form-note style="font-size:0.85rem;"></p>
+        </div>
+      </form>
     </div>
-    
   </div>
 </section>
 

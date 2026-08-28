@@ -39,7 +39,7 @@
           '<a class="nav-link" data-page="contact" href="contact.html">Contact</a>' +
         '</div>' +
         '<div class="nav-right">' +
-          '<a href="mailto:hello@bl.co" class="btn btn-ghost nav-cta magnetic">Partner With Us</a>' +
+          '<a href="partner.html" class="btn btn-ghost nav-cta magnetic">Partner With Us</a>' +
           '<button class="nav-burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
         '</div>' +
       '</div>' +
@@ -54,7 +54,7 @@
       '<a data-page="now" href="now.html">Now</a>' +
       '<a data-page="about" href="about.html">About</a>' +
       '<a data-page="contact" href="contact.html">Contact</a>' +
-      '<a href="mailto:hello@bl.co" class="btn btn-primary">Partner With Us</a>' +
+      '<a href="partner.html" class="btn btn-primary">Partner With Us</a>' +
     '</div>';
 
   /* ── Mount ───────────────────────────────────────────────── */
