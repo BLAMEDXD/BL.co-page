@@ -24,6 +24,9 @@ export default function Loader({ onComplete }: LoaderProps) {
     }
 
     const ctx = gsap.context(() => {
+      // Guard against null refs when component returns null
+      if (!blRef.current || !dotRef.current || !coRef.current || !loaderRef.current) return
+
       const tl = gsap.timeline({
         onComplete: () => {
           setVisible(false)
@@ -72,7 +75,8 @@ export default function Loader({ onComplete }: LoaderProps) {
     })
 
     return () => ctx.revert()
-  }, [onComplete])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (!visible) return null
 
